@@ -7,7 +7,7 @@ public class BoolTest {
         System.out.println("b равно " + b);
         b = true;
         System.out.println("b равно " + b);
-        if (b){
+        if (b) {
             System.out.println("Этот код выполнится.");
         }
         b = false;
