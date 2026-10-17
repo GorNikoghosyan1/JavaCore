@@ -12,13 +12,13 @@ public class FindPrime {
         }
 
         for (int i = 2; i < num / i; i++) {
-            if ((num % i) == 0){
+            if ((num % i) == 0) {
                 isPrime = false;
                 break;
             }
         }
 
-        if (isPrime){
+        if (isPrime) {
             System.out.println("Простое число");
         } else {
             System.out.println("Не простое число");
