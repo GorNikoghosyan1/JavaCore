@@ -11,7 +11,7 @@ public class ArrayHomework {
                 count++;
             }
         }
-        System.out.println("Count of 6: " + count);
+        System.out.println("Count of " + n + ": "  + count);
 
         System.out.println();
 //      Խնդիր 2 — Շրջել զանգվածի էլեմենտների հերթականությունը
@@ -83,7 +83,7 @@ public class ArrayHomework {
                 max1 = numbersBonus1[i];
             }
         }
-        int max2 = 0;
+        int max2 = Integer.MIN_VALUE;
         for (int i = 0; i < numbersBonus1.length; i++) {
             if (numbersBonus1[i] > max2 && numbersBonus1[i] < max1) {
                 max2 = numbersBonus1[i];
