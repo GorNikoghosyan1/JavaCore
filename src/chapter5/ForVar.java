@@ -5,9 +5,9 @@ public class ForVar {
         int i = 0;
         boolean done = false;
 
-        for ( ; !done ; ){
+        for (; !done; ) {
             System.out.println("i равно" + i);
-            if (i == 10){
+            if (i == 10) {
                 done = true;
             }
             i++;
