@@ -1,7 +1,5 @@
 package homeworks;
 
-import org.w3c.dom.ls.LSOutput;
-
 public class CharArrayUtil {
     public static void main(String[] args) {
         char[] chars = {
