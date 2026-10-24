@@ -9,4 +9,8 @@ public class Box {
         System.out.print("Объем равен ");
         System.out.println(width * height * depth);
     }
+
+    double volume2(){
+        return width * height * depth;
+    }
 }
