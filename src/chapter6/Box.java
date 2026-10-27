@@ -5,6 +5,13 @@ public class Box {
     double height;
     double depth;
 
+    Box() {
+        System.out.println("Koнcтpyиpoвaниe объекта Вох");
+        width = 10;
+        height = 10;
+        depth = 10;
+    }
+
     void volume(){
         System.out.print("Объем равен ");
         System.out.println(width * height * depth);
