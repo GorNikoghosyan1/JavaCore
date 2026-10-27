@@ -12,16 +12,16 @@ public class Box {
         depth = 10;
     }
 
-    void volume(){
+    void volume() {
         System.out.print("Объем равен ");
         System.out.println(width * height * depth);
     }
 
-    double volume2(){
+    double volume2() {
         return width * height * depth;
     }
 
-    void setDim(double w, double h, double d){
+    void setDim(double w, double h, double d) {
         width = w;
         height = h;
         depth = d;
