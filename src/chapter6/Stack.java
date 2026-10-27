@@ -18,7 +18,7 @@ public class Stack {
             System.out.println("Стек не загружен.");
             return 0;
         } else {
-            return stck[--tos];
+            return stck[tos--];
         }
     }
 }
