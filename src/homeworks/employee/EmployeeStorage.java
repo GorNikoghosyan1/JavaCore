@@ -3,7 +3,6 @@ package homeworks.employee;
 public class EmployeeStorage {
     private Employee[] employeesArray = new Employee[10];
     private int size = 0;
-    private Employee employee = new Employee();
 
     public void add(Employee e) {
         if (size == employeesArray.length) {
