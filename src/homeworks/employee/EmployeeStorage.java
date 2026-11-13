@@ -42,14 +42,9 @@ public class EmployeeStorage {
     public void searchById(String id) {
         boolean found = false;
         for (int i = 0; i < size; i++) {
-            if (employeesArray[i].getEmployeeID().toUpperCase().contains(id.toUpperCase())) {
+            if (employeesArray[i].getEmployeeID().toUpperCase().equals(id.toUpperCase())) {
                 System.out.println("Employee is found: ");
-                System.out.println("Name: " + employeesArray[i].getName());
-                System.out.println("Surname: " + employeesArray[i].getSurname());
-                System.out.println("Employee ID: " + employeesArray[i].getEmployeeID());
-                System.out.println("Salary: " + employeesArray[i].getSalary());
-                System.out.println("Company: " + employeesArray[i].getCompany());
-                System.out.println("Position: " + employeesArray[i].getPosition());
+                System.out.println(employeesArray[i]);
                 found = true;
                 break;
             }
@@ -63,7 +58,7 @@ public class EmployeeStorage {
         boolean found = false;
         boolean headerPrinted = false;
         for (int i = 0; i < size; i++) {
-            if (employeesArray[i].getCompany().toUpperCase().contains(company.toUpperCase())) {
+            if (employeesArray[i].getCompany().toUpperCase().equalsIgnoreCase(company.toUpperCase())) {
                 if (!headerPrinted) {
                     System.out.println("Employees:");
                     headerPrinted = true;
@@ -77,11 +72,11 @@ public class EmployeeStorage {
         }
     }
 
-    public void searchByMinSalary(int minSalary) {
+    public void searchByMinSalary(double minSalary) {
         boolean headerPrinted = false;
         boolean found = false;
         for (int i = 0; i < size; i++) {
-            int employeeSalary = Integer.parseInt(employeesArray[i].getSalary());
+            double employeeSalary = employeesArray[i].getSalary();
             if (employeeSalary >= minSalary) {
                 if (!headerPrinted) {
                     System.out.println("Employees:");

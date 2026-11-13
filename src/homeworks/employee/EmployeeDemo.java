@@ -46,8 +46,8 @@ public class EmployeeDemo {
     private static void searchByMinSalary() {
         System.out.println("Please input minimum salary");
         String minSalaryStr = scanner.nextLine();
-        int minSalaryInt = Integer.parseInt(minSalaryStr);
-        employeeStorage.searchByMinSalary(minSalaryInt);
+        double minSalaryDouble = Double.parseDouble(minSalaryStr);
+        employeeStorage.searchByMinSalary(minSalaryDouble);
     }
 
     private static void searchEmployeeByCompany() {
@@ -74,7 +74,7 @@ public class EmployeeDemo {
         System.out.println("Please input employee surname:");
         String employeeSurname = scanner.nextLine();
         System.out.println("Please input employee salary:");
-        String employeeSalary = scanner.nextLine();
+        double employeeSalary = Double.parseDouble(scanner.nextLine());
         System.out.println("Please input employee company:");
         String employeeCompany = scanner.nextLine();
         System.out.println("Please input employee position:");
