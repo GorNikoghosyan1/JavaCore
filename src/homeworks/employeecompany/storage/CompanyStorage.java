@@ -17,6 +17,8 @@ public class CompanyStorage {
             extend();
         }
         companies[size++] = company;
+        System.out.println("Company successfully added!");
+        System.out.println();
     }
 
     private void extend() {
@@ -42,7 +44,7 @@ public class CompanyStorage {
 
     public void printAllCompanies() {
         for (int i = 0; i < size; i++) {
-            System.out.println(companies[i].getName() + " - " + companies[i].getName() + " - " + companies[i].getCountry());
+            System.out.println(companies[i].getCompanyID() + " - " + companies[i].getName() + " - " + companies[i].getCountry());
             System.out.println();
         }
     }

@@ -1,11 +1,11 @@
 package homeworks.employeecompany;
 
-import chapter5.Comma;
 import homeworks.employeecompany.model.Company;
 import homeworks.employeecompany.model.Employee;
 import homeworks.employeecompany.storage.CompanyStorage;
 import homeworks.employeecompany.storage.EmployeeStorage;
 
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class EmployeeDemo implements Commands {
@@ -80,7 +80,7 @@ public class EmployeeDemo implements Commands {
         String employeeID = scanner.nextLine();
         System.out.println("Enter new company ID:");
         String newCompanyID = scanner.nextLine();
-        employeeStorage.ChangeCompany(employeeID, newCompanyID, companyStorage);
+        employeeStorage.changeCompany(employeeID, newCompanyID, companyStorage);
     }
 
     private static void printEmployeesByCompanyID() {
@@ -127,8 +127,6 @@ public class EmployeeDemo implements Commands {
 
         Company company = new Company(companyName, companyID, companyIndustry, companyCountry);
         companyStorage.add(company);
-        System.out.println("Company successfully added!");
-        System.out.println();
     }
 
     private static void searchEmployeeById() {
@@ -159,8 +157,18 @@ public class EmployeeDemo implements Commands {
         System.out.println("Enter Employee ID:");
         String employeeID = scanner.nextLine();
         System.out.println();
-        System.out.println("Enter Employee salary:");
-        double salary = Double.parseDouble(scanner.nextLine());
+
+        boolean isRunSalary = true;
+        double salary = 0;
+        while (isRunSalary) {
+            try {
+                System.out.println("Enter Employee salary:");
+                salary = Double.parseDouble(scanner.nextLine());
+                isRunSalary = false;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid salary. Please enter valid salary now.");
+            }
+        }
         System.out.println();
         System.out.println("Enter Employee position:");
         String position = scanner.nextLine();
@@ -175,7 +183,5 @@ public class EmployeeDemo implements Commands {
         }
         Employee employee = new Employee(name, surname, employeeID, salary, company, position);
         employeeStorage.add(employee);
-        System.out.println("Employee successfully added!");
-        System.out.println();
     }
 }

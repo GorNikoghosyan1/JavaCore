@@ -13,7 +13,7 @@ public interface Commands {
     String CHANGE_EMPLOYEE_COMPANY = "9";
     String PRINT_EMPLOYEE_COMPANY = "10";
 
-    public static void printCommands() {
+    static void printCommands() {
         System.out.println(EXIT + " - EXIT");
         System.out.println();
         System.out.println(ADD_EMPLOYEE + " - ADD EMPLOYEE");

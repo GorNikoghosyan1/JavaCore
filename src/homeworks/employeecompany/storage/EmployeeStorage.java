@@ -18,6 +18,8 @@ public class EmployeeStorage {
             extend();
         }
         employees[size++] = employee;
+        System.out.println("Employee successfully added!");
+        System.out.println();
     }
 
     private void extend() {
@@ -85,7 +87,7 @@ public class EmployeeStorage {
         }
     }
 
-    public void ChangeCompany(String employeeID, String newCompanyID, CompanyStorage companyStorage) {
+    public void changeCompany(String employeeID, String newCompanyID, CompanyStorage companyStorage) {
         Employee employee = getById(employeeID);
         if (employee == null) {
             System.out.println("Employee with ID " + employeeID + " not found.");
