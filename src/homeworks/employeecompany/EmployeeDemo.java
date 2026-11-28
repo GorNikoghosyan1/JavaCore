@@ -5,7 +5,6 @@ import homeworks.employeecompany.model.Employee;
 import homeworks.employeecompany.storage.CompanyStorage;
 import homeworks.employeecompany.storage.EmployeeStorage;
 
-import java.text.ParseException;
 import java.util.Scanner;
 
 public class EmployeeDemo implements Commands {
