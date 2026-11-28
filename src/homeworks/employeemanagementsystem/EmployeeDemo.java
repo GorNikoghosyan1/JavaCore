@@ -300,8 +300,10 @@ public class EmployeeDemo implements Commands {
         System.out.println("Position: " + employee.getPosition());
         if (employee.getCompany() != null) {
             System.out.println("Company: " + employee.getCompany().getName());
+            System.out.println();
         } else {
             System.out.println("Employee is not with the company.");
+            System.out.println();
         }
     }
 
@@ -317,6 +319,13 @@ public class EmployeeDemo implements Commands {
         System.out.println("Enter Employee ID:");
         String employeeID = scanner.nextLine();
         System.out.println();
+        try {
+            employeeStorage.checkDuplicateId(employeeID);
+        } catch (DuplicateEmployeeException e) {
+            System.out.println(e.getMessage());
+            System.out.println();
+            return;
+        }
 
         boolean isRunSalary = true;
         double salary = 0;
@@ -345,6 +354,7 @@ public class EmployeeDemo implements Commands {
             System.out.println();
             return;
         } finally {
+            System.out.println();
             System.out.println("Operation finished.");
             System.out.println();
         }

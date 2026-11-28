@@ -10,11 +10,7 @@ public class EmployeeStorage {
     private int size = 0;
 
     public void add(Employee employee) throws DuplicateEmployeeException {
-        for (int i = 0; i < size; i++) {
-            if (employees[i].getEmployeeID().equalsIgnoreCase(employee.getEmployeeID())) {
-                throw new DuplicateEmployeeException("Error: Employee with id " + employee.getEmployeeID() + " already exists.");
-            }
-        }
+        checkDuplicateId(employee.getEmployeeID());
         if (size == employees.length) {
             extend();
         }
@@ -154,6 +150,14 @@ public class EmployeeStorage {
         if (!found) {
             System.out.println("No employees found with status " + status);
             System.out.println();
+        }
+    }
+
+    public void checkDuplicateId(String id) throws DuplicateEmployeeException {
+        for (int i = 0; i < size; i++) {
+            if(employees[i].getEmployeeID().equalsIgnoreCase(id)){
+                throw new DuplicateEmployeeException("Error: Employee with id " + id + " already exists.");
+            }
         }
     }
 }
